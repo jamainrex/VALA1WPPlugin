@@ -1,0 +1,49 @@
+<div class="wrap">
+<h2><?php _e('Public Voting Settings', self::TEXT_DOMAIN); ?></h2>
+<div class="eab-note">
+    <p><?php _e('This is where you manage the Public Voting settings.', self::TEXT_DOMAIN); ?></p>
+</div>    
+
+<div class="postbox">
+        <h3 class="vnbox-title">Public Voting Lists:</h3>
+        
+            <div class="inside">
+                <?php 
+                      echo '<table cellpadding="5" border="1" class="vala-vote-table">';
+                      echo '<tr><th width="5%">ID</th>';
+                      echo '<th width="35%">Name</th>';
+                      echo '<th width="30%">Email</th>';
+                      echo '<th width="10%">Votes</th>';
+                      echo '<th width="15%">Action</th>';
+                      echo '</tr>';
+                      foreach( $votes as $id => $vote ){
+                          echo '<tr>';
+                          echo '<td>'. $id .'</td>';
+                          echo '<td>'. $vote['details']['name'] .'</td>';
+                          echo '<td>' . $vote['details']['email'] . '</td>'; 
+                          echo '<td>' . count( $vote['votes'] ) . '</td>'; 
+                          echo '<td style="text-align:center;"><input class="view_votes button-primary" type="button" class="button" lang="'.$id.'" value="View Votes"></td>';
+                          echo '</tr>';
+                      }
+                      
+                      echo '</table>';
+                ?>
+            </div>
+        
+</div>
+
+</div>
+
+<script type="text/javascript">
+jQuery.noConflict();
+
+jQuery(document).ready(function($) {
+    jQuery('.view_votes').click(function(e){
+        e.preventDefault();
+        var pvid = jQuery(this).attr('lang');
+
+         var new_vala_show_votes_url = _new_vala_view_votes_url + '&pvid='+ pvid;
+        window.location = new_vala_show_votes_url;
+    });
+});
+</script>

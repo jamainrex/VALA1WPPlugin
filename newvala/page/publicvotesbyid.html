@@ -1,0 +1,50 @@
+<div class="wrap">
+<h2><?php _e('Public Voting Settings', self::TEXT_DOMAIN); ?></h2>
+<div class="eab-note">
+    <p><?php _e('This is where you manage the Public Voting settings.', self::TEXT_DOMAIN); ?></p>
+</div>    
+
+<div class="postbox">
+        <div class="inside"><input class="view_public_voting button-primary" type="button" value="Back to Public Votes"></div>
+        <h3 class="vnbox-title">Public Votes By: <strong><?php echo $votes[$_GET['pvid']]['details']['name']; ?></strong></h3>
+        
+            <div class="inside">
+                <?php 
+                      echo '<table cellpadding="5" border="1" class="vala-vote-table">';
+                      echo '<tr><th width="5%">ID</th>';
+                      echo '<th width="25%">Name</th>';
+                      echo '<th width="12%">Region ID</th>';
+                      echo '<th width="12%">Category ID</th>';
+                      echo '<th width="12%">App Category ID</th>';
+                      echo '<th width="10%">Created</th>';
+                      echo '</tr>';
+                      foreach( $_votes as $id => $vote ){
+                          $app = new_vala_getappuserdetails($vote['app_id']);
+                          echo '<tr>';
+                          echo '<td>'. ($id + 1) .'</td>';
+                          echo '<td>'. $app['firstname']. " " . $app['lastname'] .'</td>';
+                          echo '<td>' . $votes[$_GET['pvid']]['details']['region_id'] . '</td>'; 
+                          echo '<td>' . $vote['cat_id'] . '</td>'; 
+                          echo '<td>' . $vote['app_category_id'] . '</td>'; 
+                          echo '<td>' . $vote['created_at'] . '</td>'; 
+                          echo '</tr>';
+                      }
+                      
+                      echo '</table>';
+                ?>
+            </div>
+        
+</div>
+
+</div>
+
+<script type="text/javascript">
+jQuery.noConflict();
+
+jQuery(document).ready(function($) {
+    jQuery('.view_public_voting').click(function(e){
+        e.preventDefault();
+        window.location = _new_vala_view_votes_url;
+    });
+});
+</script>

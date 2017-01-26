@@ -1,0 +1,69 @@
+<div class="wrap">
+<h2><?php _e('Welcome to New VALA Settings', self::TEXT_DOMAIN); ?></h2>
+<div class="eab-note">
+    <p><?php _e('This is where you manage the New VALA settings for the plugin.', self::TEXT_DOMAIN); ?></p>
+</div>
+
+ <form method="post" name="update_admin" action="">
+            <?php wp_nonce_field('ewm_new_vala-update-options'); ?>
+        <input type="hidden" name="region_id" value="<?php echo $this->getRegionID(); ?>">
+            
+        <div class="eab-metaboxcol metabox-holder eab-metaboxcol-one eab-metaboxcol-center">
+            
+            <div id="eab-settings-apis" class="eab-metabox postbox" style="padding: 10px;">
+            
+                <h3 class="eab-hndle" style="padding: 0;"><?php _e('General Options:', self::TEXT_DOMAIN); ?></h3>
+                <div style="padding-top: 10px;" class="eab-inside">
+                
+                    <div class="eab-settings-settings_item">
+                    
+                            
+                    <?php if( isset( $deleted_cached ) ){
+                            echo '<ul>';
+                            foreach( $deleted_cached as $r => $dc ){
+                                echo '<li>'.$r.' - '.$dc.'</li>'; 
+                            }
+                            echo '</ul>';        
+                    } ?>
+                    
+                    
+                        <label style="display: block" for="nvoptsponsors">Force update all cached information VALA API.</label>
+                        <p class="submit">
+                            <input type="submit" class="button-primary" name="force_update" value="<?php _e('Force Update', self::TEXT_DOMAIN) ?>" />
+                        </p>
+                    
+                    </div>
+                       
+                </div>
+                
+            </div>
+            
+        </div>
+            
+        
+</form>
+
+     <div class="eab-metaboxcol metabox-holder eab-metaboxcol-one eab-metaboxcol-center">
+            
+            <div id="eab-settings-apis" class="eab-metabox postbox" style="padding: 10px;">
+            
+                <h3 class="eab-hndle" style="padding: 0;"><?php _e('Shortcode List :', self::TEXT_DOMAIN); ?></h3>
+                <div style="padding-top: 10px;" class="eab-inside">
+                
+                    <div class="eab-settings-settings_item">
+                        <ul>
+                            <li>[new_vala_semi /]</li>
+                            <li>[new_vala_finalist /]</li>
+                            <li>[new_vala_winners /]</li>
+                            <li>[new_vala_public_voting_semi /]</li>
+                            <li>[newvala_publicvoting_semi /]</li>
+                            <li>[new_vala_sponsors_slider /]</li>
+                        <li>[new_vala_sponsors_logo /]</li>
+                        </ul>
+                    </div>
+                       
+                </div>
+                
+            </div>
+            
+        </div>

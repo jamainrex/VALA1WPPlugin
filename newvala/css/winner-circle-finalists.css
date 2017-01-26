@@ -1,0 +1,163 @@
+.award-title{
+  color:#F1645D;
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-family: 'Droid Serif', serif;
+  font-weight: normal;
+  padding: 1em 0;
+  clear: both;
+}
+
+.winner .avatar{
+  border: 2px solid #F1645D;  
+}
+
+.winner .label{
+  color:#F1645D; 
+}
+
+.finalist .avatar{
+  border: 2px solid #ccc;
+}
+
+.finalist .label{
+  color:#ccc;
+}  
+
+
+.nominee{
+  float: left;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;    
+  margin-bottom: 2em;
+  font-family: 'PT Sans',sans-serif;
+  border: 0;
+}
+
+.nominee > div{
+  padding: 16px;
+}
+
+.top-border{
+  border-top: 1px solid #eee;
+}
+
+.nominee h3{
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Droid Serif', serif;
+  font-weight: normal;
+}  
+
+.nominee .label{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: 'Droid Serif', serif;
+  font-size: 13px;
+  margin-bottom: 1em;
+}
+
+.nominee .avatar{
+  /*
+  background-size: cover;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%; 
+  */
+  background-size: contain;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+}
+
+.nominee .text{
+  font-size: 13px;
+  line-height: 170%;
+  color: #747474;
+  text-align: center;
+  overflow: hidden;
+}
+
+.nominee .text h4{
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 0.5em;
+  color: #333;
+}
+
+.nominee .text h5{
+  font-size: 12px;
+  font-weight: normal;
+  margin:  0 0 1.5em;
+  color: #333;
+  line-height: 1em;
+}
+
+@media only screen and (min-width: 700px) {
+  .nominee{
+    width: 50%;
+    padding: 0 16px;
+    float: left;
+    display: inline-block;
+  }    
+
+  .nominee > div{
+    height: 280px;
+  }
+
+  .nominee .image{
+    float: left;
+    padding-right: 1em;
+  }
+
+  .nominee .text{
+    text-align: left;
+    float: none;
+    overflow: visible;
+  }
+}  
+
+@media only screen and (min-width: 700px) and (max-width:999px) {
+  .nominee.even{
+    clear: left;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .nominee{
+    width: 33.3333333%;
+  }
+
+  .nominee.cols-3{
+    clear: left;
+  }
+
+  .nominee > div{
+    height: auto;
+    min-height: 280px;
+  }
+
+  .nominee .image{
+    max-width: 30%;
+  }  
+
+  .nominee .text{
+    overflow: auto;
+    max-width: 70%;
+    padding-left: 1em;
+  }
+}  

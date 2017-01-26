@@ -1,0 +1,104 @@
+<div class="wrap">
+<h2><?php _e('Winners Circle Settings', self::TEXT_DOMAIN); ?></h2>
+<div class="eab-note">
+    <p><?php _e('This is where you manage the Winners Circle Settings.', self::TEXT_DOMAIN); ?></p>
+</div>
+        
+        <form method="post" name="update_semi" action="">
+            <?php wp_nonce_field('ewm_new_vala-update-options'); ?>
+        <input type="hidden" name="region_id" value="<?php echo $this->getRegionID(); ?>">
+            
+        <div class="eab-metaboxcol metabox-holder eab-metaboxcol-one eab-metaboxcol-center">
+            
+            <div id="eab-settings-apis" class="eab-metabox postbox" style="padding: 10px;">
+            
+                <h3 class="eab-hndle" style="padding: 0;"><?php _e('Semi Finalists :', self::TEXT_DOMAIN); ?></h3>
+                <div style="padding-top: 10px;" class="eab-inside">
+                
+                    <div class="eab-settings-settings_item">
+                        <?php
+                            //$nv_regions = new_vala_getallregions(true);
+                            //$data = new_vala_getsemibyregion( $this->_data['new_vala_region_id'] );
+                            $nv_semi = $_nv['semifinalists'];
+                        ?>
+                        <?php echo count($nv_semi);?> Results found. 
+                    </div>
+                       
+                </div>
+                
+            </div>
+            
+        </div>
+            <p class="submit">
+                <input type="submit" class="button-primary" name="update_semi_data" value="<?php _e('Update Semi-finalists', self::TEXT_DOMAIN) ?>" />
+            </p>
+        
+        </form>
+        
+        <div class="clearfix" style="padding: 5px 0;"></div>
+        
+        <form method="post" name="update_finalist" action="">
+            <?php wp_nonce_field('ewm_new_vala-update-options'); ?>
+        <input type="hidden" name="region_id" value="<?php echo $this->getRegionID(); ?>">
+            
+        <div class="eab-metaboxcol metabox-holder eab-metaboxcol-one eab-metaboxcol-center">
+            
+            <div id="eab-settings-apis" class="eab-metabox postbox" style="padding: 10px;">
+            
+                <h3 class="eab-hndle" style="padding: 0;"><?php _e('Finalists :', self::TEXT_DOMAIN); ?></h3>
+                <div style="padding-top: 10px;" class="eab-inside">
+                
+                    <div class="eab-settings-settings_item">
+                        <?php
+                            //$data = new_vala_getfinalistbyregion( $this->_data['new_vala_region_id'] );
+                            $nv_finalist = $_nv['finalists'];
+                            
+                            //echo '<pre>'.print_r($nv_finalist,true).'</pre>';
+                        ?>
+                        <?php echo count($nv_finalist);?> Results found. 
+                    </div>
+                       
+                </div>
+                
+            </div>
+            
+        </div>
+            <p class="submit">
+                <input type="submit" class="button-primary" name="update_finalist_data" value="<?php _e('Update Finalists', self::TEXT_DOMAIN) ?>" />
+            </p>
+        
+        </form>
+        
+        <div class="clearfix" style="padding: 5px 0;"></div>
+        
+        <form method="post" name="update_winners" action="">
+            <?php wp_nonce_field('ewm_new_vala-update-options'); ?>
+        <input type="hidden" name="region_id" value="<?php echo $this->getRegionID(); ?>">
+            
+        <div class="eab-metaboxcol metabox-holder eab-metaboxcol-one eab-metaboxcol-center">
+            
+            <div id="eab-settings-apis" class="eab-metabox postbox" style="padding: 10px;">
+            
+                <h3 class="eab-hndle" style="padding: 0;"><?php _e('Winners :', self::TEXT_DOMAIN); ?></h3>
+                <div style="padding-top: 10px;" class="eab-inside">
+                
+                    <div class="eab-settings-settings_item">
+                        <?php
+                            $data = new_vala_getwinnersbyregion( $this->_data['new_vala_region_id'] );
+                            $nv_winners = $data['winners'];
+                        ?>
+                        <?php echo count($nv_winners);?> Results found. 
+                    </div>
+                       
+                </div>
+                
+            </div>
+            
+        </div>
+            <p class="submit">
+                <input type="submit" class="button-primary" name="update_winners_data" value="<?php _e('Update Winners', self::TEXT_DOMAIN) ?>" />
+            </p>
+        
+        </form>
+
+</div>
