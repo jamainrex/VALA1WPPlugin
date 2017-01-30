@@ -899,8 +899,8 @@ function new_vala_test_sc(){
      global $__newvalaobj, $post, $paged, $wp_query, $wp_rewrite, $vala_region_list, $region_list, $wpdb, $table_prefix;     
      
      //$site_list = $wpdb->get_results( $wpdb->prepare('SELECT * FROM va_blogs ORDER BY blog_id', '') );
-     
-     //echo '<pre>'.print_r( $site_list, true ).'</pre>';
+    $rid = $__newvalaobj->getRegionID();
+     echo '<pre>'.print_r( $rid, true ).'</pre>';
      echo '<pre>'.print_r( $vala_region_list, true ).'</pre>';
      echo '<pre>'.print_r( $region_list, true ).'</pre>';
      /**

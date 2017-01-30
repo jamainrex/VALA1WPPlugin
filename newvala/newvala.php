@@ -102,6 +102,14 @@ class Ewm_new_vala {
         
         // Fetch New VALA region ID by Name
         $blog_title = get_bloginfo('name');
+
+         $_bt = explode( " ", $blog_title );
+         if( is_numeric( $_bt[ count( $_bt ) - 1 ] ) )
+         {
+             array_pop( $_bt );
+             $blog_title = implode( " ", $_bt );
+         }
+
         //$appRegions = new_vala_getappregions();
         $appRegions = new_vala_getappregions_();
         
